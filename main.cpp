@@ -1,11 +1,20 @@
-//
-//  main.cpp
-//  data2
-//
-//  Created by John Goza on 7/4/16.
-//  Copyright © 2016 JohnGoza. All rights reserved.
-//
+/*
+Name:	Jack Goza, Joshua Ford, Scott Peery
+Course:	CS303
+Program:	Project 2
+Due Date:
 
+Description:
+
+Inputs:
+
+Outputs:
+
+Algorithm:
+
+*****SPECIAL NOTE*****
+
+*/
 #include <iostream>
 #include <queue>
 #include <list>

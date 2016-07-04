@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "main", "main\main.vcxproj", "{6484159F-5250-4DDF-9BA5-58C251168719}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project2", "main\main.vcxproj", "{6484159F-5250-4DDF-9BA5-58C251168719}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FE6345EA-821F-4871-AB24-55D98CF5F598}"
+	ProjectSection(SolutionItems) = preProject
+		..\book.cpp = ..\book.cpp
+		..\book.hpp = ..\book.hpp
+		..\Date.h = ..\Date.h
+		..\library.cpp = ..\library.cpp
+		..\library.hpp = ..\library.hpp
+		..\main.cpp = ..\main.cpp
+		..\README.md = ..\README.md
+		..\StringTokenizer.h = ..\StringTokenizer.h
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
