@@ -17,3 +17,24 @@
 	pass_on(string bookToMove);
  */
 
+library::library()
+{
+}
+
+library::add_book(string newBook)
+{
+;
+}
+
+library::add_employee(string newPerson)
+{
+;
+}
+
+library::circulate_book(string bookToMove, Date dayOfMove)
+{
+}
+
+library::pass_on(string bookToMove)
+{
+}
