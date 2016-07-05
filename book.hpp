@@ -24,12 +24,24 @@ public:
 using namespace std;
 
 class book{
-public:
-	string name;
+private:	string name;
 	Date startDate;
 	Date endDate;
 	bool archived;
-	queue<employee> waiting
+	queue<employee> waiting;
+public:
+	book();
+	book(book& other);
+
+	string getname();
+	Date getstartDate();
+	Date getendDate();
+	bool getarchived();
+
+	void setname();
+	void setstartDate();
+	void setendDate();
+	void setarchived();
 	
 };
 

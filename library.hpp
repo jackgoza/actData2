@@ -18,10 +18,12 @@
 class library{
 public:
 	library();
-	add_book(string newBook);
-	add_employee(string newPerson);
-	circulate_book(string bookToMove, Date dayOfMove);
-	pass_on(string bookToMove);
+	library(library& other);
+
+	void add_book(string newBook);
+	void add_employee(string newPerson);
+	void circulate_book(string bookToMove, Date dayOfMove);
+	void pass_on(string bookToMove);
 };
 
 #endif /* library_hpp */
