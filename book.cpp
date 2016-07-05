@@ -12,7 +12,7 @@ book::book(){
 
 }
 
-book::book(book& other){
+book::book(book& other){ // Why?
 	name = other.name;
 	startDate = other.startDate;
 	endDate = other.endDate;

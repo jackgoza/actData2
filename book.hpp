@@ -1,9 +1,5 @@
 //
-//  book.hpp
-//  data2
-//
-//  Created by John Goza on 7/4/16.
-//  Copyright © 2016 JohnGoza. All rights reserved.
+// Why have we included a copy constructor? Are we hedging for duplicate books?
 //
 
 #ifndef book_hpp
@@ -13,18 +9,13 @@
 #include <string>
 #include <queue>
 #include "Date.h"
-
-struct employee{
-public:
-	string name;
-	int waitTime;
-	int retainTime;
-};
+#include "employee.hpp"
 
 using namespace std;
 
 class book{
-private:	string name;
+private:
+	string name;
 	Date startDate;
 	Date endDate;
 	bool archived;

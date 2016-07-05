@@ -21,7 +21,7 @@ library::library(){
 }
 
 library::library(library& other){
-
+	bookList = other.bookList;
 }
 
 void library::add_book(string newBook){
