@@ -38,10 +38,10 @@ public:
 	Date getendDate();
 	bool getarchived();
 
-	void setname();
-	void setstartDate();
-	void setendDate();
-	void setarchived();
+	void setname(string newName);
+	void setstartDate(Date newDate);
+	void setendDate(Date newDate);
+	void setarchived(bool newBool);
 	
 };
 
