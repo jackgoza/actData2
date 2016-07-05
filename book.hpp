@@ -19,9 +19,11 @@ private:
 	Date startDate;
 	Date endDate;
 	bool archived;
-	queue<employee> waiting;
+	queue<employee> waiting; // this needs to be changed to a priority queue
 public:
 	book();
+	book(string bookName);
+	book(string bookName, Date start);
 	book(book& other);
 
 	string getname();
