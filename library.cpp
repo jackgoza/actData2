@@ -21,20 +21,20 @@ library::library()
 {
 }
 
-library::add_book(string newBook)
+void library::add_book(string newBook)
 {
 ;
 }
 
-library::add_employee(string newPerson)
+void library::add_employee(string newPerson)
 {
 ;
 }
 
-library::circulate_book(string bookToMove, Date dayOfMove)
+void library::circulate_book(string bookToMove, Date dayOfMove)
 {
 }
 
-library::pass_on(string bookToMove)
+void library::pass_on(string bookToMove)
 {
 }
