@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string>
 #include <queue>
+#include <list>
 #include "Date.h"
 #include "book.hpp"
 
@@ -24,6 +25,10 @@ public:
 	void add_employee(string newPerson);
 	void circulate_book(string bookToMove, Date dayOfMove);
 	void pass_on(string bookToMove);
+	
+private:
+	list<book> bookList;
+	list<employee> employeeList;
 };
 
 #endif /* library_hpp */

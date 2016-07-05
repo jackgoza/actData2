@@ -12,7 +12,16 @@ book::book(){
 
 }
 
-book::book(book& other){
+book::book(string bookName){
+	name = bookName;
+}
+
+book::book(string bookName,Date start){
+	name = bookName;
+	startDate = start;
+}
+
+book::book(book& other){ // Why?
 	name = other.name;
 	startDate = other.startDate;
 	endDate = other.endDate;
