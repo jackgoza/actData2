@@ -7,3 +7,40 @@
 //
 
 #include "book.hpp"
+
+book::book(){
+
+}
+
+book::book(book& other){
+	name = other.name;
+	startDate = other.startDate;
+	endDate = other.endDate;
+	archived = other.archived;
+}
+
+string book::getname(){
+	return name;
+}
+Date book:: getstartDate(){
+	return startDate;
+}
+Date book::getendDate(){
+	return endDate;
+}
+bool book::getarchived(){
+	return archived;
+}
+
+void book::setname(string newName){
+	name = newName;
+}
+void book::setstartDate(Date newDate){
+	startDate = newDate;
+}
+void book::setendDate(Date newDate){
+	endDate = newDate;
+}
+void book::setarchived(bool newBool){
+	archived = newBool;
+}
