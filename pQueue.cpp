@@ -37,6 +37,6 @@ bool pQueue::removeEmployee(string nameOf){
 void pQueue::setQueueOrder(){
 	for (int i=0; i<WorkQueue.size(); i++){
 		WorkQueue[i].refreshPriority();
-		// TODO: using std::stable_sort, sort from begin() to end().
 	}
+	stable_sort(WorkQueue.begin(), WorkQueue.end()); // This *should* work.
 }

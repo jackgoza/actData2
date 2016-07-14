@@ -41,3 +41,11 @@ void employee::refreshPriority(){ // hate the fact that this is O(n). I doubt th
 	
 	priority = waitTime - retainTime;
 }
+
+bool operator<(const employee& lhs, const employee& rhs){
+	return (lhs.priority < rhs.priority);
+}
+
+bool operator>(const employee& lhs, const employee& rhs){
+	return (lhs.priority > rhs.priority);
+}

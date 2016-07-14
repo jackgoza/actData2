@@ -22,15 +22,15 @@ public:
 	void setName(string newName);
 	void setWait(int wait);
 	void setRetain(int retain);
-	void refreshPriority();
-	bool operator<(employee rhs); // needs implimentation
-	bool operator>(employee rhs); // needs implimentation
+	void refreshPriority(); // hate the fact that this is O(n).
+	friend bool operator<(const employee& lhs, const employee& rhs);
+	friend bool operator>(const employee& lhs, const employee& rhs); // might be unnecessary
 	
 private:
 	string name;
 	int waitTime;
 	int retainTime;
-	int priority;
+	int priority; // new!
 };
 
 #endif /* employee_hpp */

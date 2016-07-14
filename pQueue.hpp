@@ -20,11 +20,11 @@ public:
 	pQueue();
 	void addEmployee(employee temp);
 	bool removeEmployee(string nameOf);
-	void setQueueOrder(); // this could be reimagined.
+	void setQueueOrder(); // this NEEDS to be reimagined.
 	
 private:
 	vector<employee> WorkQueue;
-	// Yeah, we're using a vector. Don't even trip dawgs.
+	// Yeah, we're using a vector. Trip. Dare you.
 	
 };
 
