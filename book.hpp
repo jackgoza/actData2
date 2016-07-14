@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <string>
-#include <queue>
+#include <queue> // ditch this
 #include "Date.h"
 #include "employee.hpp"
 
@@ -19,7 +19,7 @@ private:
 	Date startDate;
 	Date endDate;
 	bool archived;
-	queue<employee> waiting; // this needs to be changed to a priority queue
+	queue<employee> waiting; // this needs to be changed to the pqueue
 public:
 	book();
 	book(string bookName);

@@ -22,11 +22,15 @@ public:
 	void setName(string newName);
 	void setWait(int wait);
 	void setRetain(int retain);
+	void refreshPriority();
+	bool operator<(employee rhs); // needs implimentation
+	bool operator>(employee rhs); // needs implimentation
 	
 private:
 	string name;
 	int waitTime;
 	int retainTime;
+	int priority;
 };
 
 #endif /* employee_hpp */

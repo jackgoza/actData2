@@ -10,12 +10,14 @@ employee::employee(){
 	name = "unknown";
 	waitTime = 0;
 	retainTime = 0;
+	priority = 0;
 }
 
 employee::employee(string newName){
 	name = newName;
 	waitTime = 0;
 	retainTime = 0;
+	priority = 0;
 }
 
 string employee::getName(){
@@ -33,4 +35,9 @@ void employee::setWait(int wait){
 
 void employee::setRetain(int retain){
 	retainTime = retain;
+}
+
+void employee::refreshPriority(){ // hate the fact that this is O(n). I doubt that's fixable though.
+	
+	priority = waitTime - retainTime;
 }
