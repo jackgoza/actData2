@@ -8,48 +8,48 @@
 
 #include "book.hpp"
 
-book::book(){
+Book::Book(){
 
 }
 
-book::book(string bookName){
+Book::Book(string bookName){
 	name = bookName;
 }
 
-book::book(string bookName,Date start){
+Book::Book(string bookName,Date start){
 	name = bookName;
 	startDate = start;
 }
 
-book::book(book& other){ // Why?
+Book::Book(Book& other){ // Why?
 	name = other.name;
 	startDate = other.startDate;
 	endDate = other.endDate;
 	archived = other.archived;
 }
 
-string book::getname(){
+string Book::getname(){
 	return name;
 }
-Date book:: getstartDate(){
+Date Book:: getstartDate(){
 	return startDate;
 }
-Date book::getendDate(){
+Date Book::getendDate(){
 	return endDate;
 }
-bool book::getarchived(){
+bool Book::getarchived(){
 	return archived;
 }
 
-void book::setname(string newName){
+void Book::setname(string newName){
 	name = newName;
 }
-void book::setstartDate(Date newDate){
+void Book::setstartDate(Date newDate){
 	startDate = newDate;
 }
-void book::setendDate(Date newDate){
+void Book::setendDate(Date newDate){
 	endDate = newDate;
 }
-void book::setarchived(bool newBool){
+void Book::setarchived(bool newBool){
 	archived = newBool;
 }

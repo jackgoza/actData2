@@ -12,26 +12,22 @@
 	pass_on(string bookToMove);
  */
 
-library::library(){
+Library::Library(){
 }
 
-library::library(library& other){ // Is this necessary?
-	bookList = other.bookList;
-}
-
-void library::add_book(string newBook){
-	book tempBook(newBook);
+void Library::add_book(string newBook){
+	Book tempBook(newBook);
 	bookList.push_back(tempBook);
 }
 
-void library::add_employee(string newPerson){
-	employee tempPerson(newPerson);
+void Library::add_employee(string newPerson){
+	Employee tempPerson(newPerson);
 	employeeList.push_back(tempPerson);
 }
 
-void library::circulate_book(string bookToMove, Date dayOfMove){
+void Library::circulate_book(string bookToMove, Date dayOfMove){
 	
 }
 
-void library::pass_on(string bookToMove){
+void Library::pass_on(string bookToMove, Date date){
 }

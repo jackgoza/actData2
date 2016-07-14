@@ -14,17 +14,17 @@
 
 using namespace std;
 
-class employee{
+class Employee{
 public:
-	employee();
-	employee(string newName);
+	Employee();
+	Employee(string newName);
 	string getName();
 	void setName(string newName);
 	void setWait(int wait);
 	void setRetain(int retain);
 	void refreshPriority(); // hate the fact that this is O(n).
-	friend bool operator<(const employee& lhs, const employee& rhs);
-	friend bool operator>(const employee& lhs, const employee& rhs); // might be unnecessary
+	friend bool operator<(const Employee& lhs, const Employee& rhs);
+	friend bool operator>(const Employee& lhs, const Employee& rhs); // might be unnecessary
 	
 private:
 	string name;

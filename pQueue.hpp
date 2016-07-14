@@ -18,12 +18,12 @@ using namespace std;
 class pQueue{
 public:
 	pQueue();
-	void addEmployee(employee temp);
+	void addEmployee(Employee temp);
 	bool removeEmployee(string nameOf);
 	void setQueueOrder(); // this NEEDS to be reimagined.
 	
 private:
-	vector<employee> WorkQueue;
+	vector<Employee> WorkQueue;
 	// Yeah, we're using a vector. Trip. Dare you.
 	
 };

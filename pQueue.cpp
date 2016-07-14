@@ -11,7 +11,6 @@
 #include <vector>
 #include <algorithm>
 
-
 using namespace std;
 
 /*
@@ -21,7 +20,7 @@ bool removeEmployee(string nameOf);
 void setQueueOrder();
 */
 
-void pQueue::addEmployee(employee temp){
+void pQueue::addEmployee(Employee temp){
 	WorkQueue.push_back(temp);
 }
 
