@@ -16,15 +16,14 @@
 #include "Date.h"
 #include "book.hpp"
 
-class library{
+class Library{
 public:
-	library();
-	library(library& other);
+	Library();
 
 	void add_book(string newBook);
 	void add_employee(string newPerson);
 	void circulate_book(string bookToMove, Date dayOfMove);
-	void pass_on(string bookToMove);
+	void pass_on(string bookToMove, Date date);
 	
 private:
 	list<book> bookList;
