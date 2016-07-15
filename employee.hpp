@@ -11,26 +11,36 @@
 
 #include <stdio.h>
 #include <string>
+#include "Date.h"
 
 using namespace std;
 
-class employee{
-public:
-	employee();
-	employee(string newName);
-	string getName();
-	void setName(string newName);
-	void setWait(int wait);
-	void setRetain(int retain);
-	void refreshPriority(); // hate the fact that this is O(n).
-	friend bool operator<(const employee& lhs, const employee& rhs);
-	friend bool operator>(const employee& lhs, const employee& rhs); // might be unnecessary
-	
+class Employee{
 private:
 	string name;
 	int waitTime;
 	int retainTime;
-	int priority; // new!
+	int priority;
+	Date start; // store start to record retain time
+public:
+	Employee();
+	Employee(string newName);
+	const Employee& operator = (const Employee& rhs);
+
+	void setName(string newName);
+	void setWait(int wait);
+	void setRetain(int retain);
+	void setStart(Date date);
+
+	string getName();
+	int getWait();
+	int getRetain();
+	Date getStart();
+	int getPriority();
+
+	void refreshPriority(); // hate the fact that this is O(n).
+	friend bool operator<(const Employee& lhs, const Employee& rhs);
+	friend bool operator>(const Employee& lhs, const Employee& rhs); // might be unnecessary
 };
 
 #endif /* employee_hpp */

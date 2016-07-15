@@ -6,46 +6,75 @@
 
 #include "employee.hpp"
 
-employee::employee(){
+Employee::Employee(){
 	name = "unknown";
 	waitTime = 0;
 	retainTime = 0;
 	priority = 0;
 }
 
-employee::employee(string newName){
+Employee::Employee(string newName){
 	name = newName;
 	waitTime = 0;
 	retainTime = 0;
 	priority = 0;
 }
 
-string employee::getName(){
-	return name;
+const Employee& Employee::operator = (const Employee& rhs){
+	name = rhs.name;
+	waitTime = rhs.waitTime;
+	retainTime = rhs.retainTime;
+	priority = rhs.priority;
+	start = rhs.start;
+	return *this;
 }
 
-void employee::setName(string newName){
+void Employee::setName(string newName){
 	name = newName;
 }
 
 
-void employee::setWait(int wait){
+void Employee::setWait(int wait){
 	waitTime = wait;
 }
 
-void employee::setRetain(int retain){
+void Employee::setRetain(int retain){
 	retainTime = retain;
 }
 
-void employee::refreshPriority(){ // hate the fact that this is O(n). I doubt that's fixable though.
+void Employee::setStart(Date date){
+	start = date;
+}
+
+void Employee::refreshPriority(){ // hate the fact that this is O(n). I doubt that's fixable though.
 	
 	priority = waitTime - retainTime;
 }
 
-bool operator<(const employee& lhs, const employee& rhs){
+string Employee::getName(){
+	return name;
+}
+
+int Employee::getWait(){
+	return waitTime;
+}
+
+int Employee::getRetain(){
+	return retainTime;
+}
+
+Date Employee::getStart(){
+	return start;
+}
+
+int Employee::getPriority(){
+	return priority;
+}
+
+bool operator<(const Employee& lhs, const Employee& rhs){
 	return (lhs.priority < rhs.priority);
 }
 
-bool operator>(const employee& lhs, const employee& rhs){
+bool operator>(const Employee& lhs, const Employee& rhs){
 	return (lhs.priority > rhs.priority);
 }

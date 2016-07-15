@@ -17,6 +17,10 @@
 #include "book.hpp"
 
 class Library{
+private:
+	list<Book> toBeCirculated;
+	list<Book> archived;
+	list<Employee> employeeList;
 public:
 	Library();
 
@@ -24,10 +28,6 @@ public:
 	void add_employee(string newPerson);
 	void circulate_book(string bookToMove, Date dayOfMove);
 	void pass_on(string bookToMove, Date date);
-	
-private:
-	list<book> bookList;
-	list<employee> employeeList;
 };
 
 #endif /* library_hpp */

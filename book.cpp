@@ -8,48 +8,68 @@
 
 #include "book.hpp"
 
-book::book(){
+Book::Book(){
 
 }
 
-book::book(string bookName){
+Book::Book(string bookName){
 	name = bookName;
 }
 
-book::book(string bookName,Date start){
+Book::Book(string bookName,Date start){
 	name = bookName;
 	startDate = start;
 }
 
-book::book(book& other){ // Why?
+Book::Book(const Book& other){
 	name = other.name;
 	startDate = other.startDate;
 	endDate = other.endDate;
 	archived = other.archived;
+	waiting = other.waiting;
 }
 
-string book::getname(){
+string Book::getname(){
 	return name;
 }
-Date book:: getstartDate(){
+Date Book:: getstartDate(){
 	return startDate;
 }
-Date book::getendDate(){
+Date Book::getendDate(){
 	return endDate;
 }
-bool book::getarchived(){
+bool Book::getarchived(){
 	return archived;
 }
 
-void book::setname(string newName){
+void Book::setname(string newName){
 	name = newName;
 }
-void book::setstartDate(Date newDate){
+void Book::setstartDate(Date newDate){
 	startDate = newDate;
 }
-void book::setendDate(Date newDate){
+void Book::setendDate(Date newDate){
 	endDate = newDate;
 }
-void book::setarchived(bool newBool){
+void Book::setarchived(bool newBool){
 	archived = newBool;
+}
+
+void Book::populate_queue(const list<Employee> empList){
+	list<Employee>::const_iterator it;
+	for (it = empList.begin(); it != empList.end(); it++){ // add all current employees to queue
+		waiting.addEmployee(*it);
+	}
+}
+
+Employee Book::pop_next(){
+	return waiting.pop();
+}
+
+Employee Book::top(){
+	return waiting.top();
+}
+
+bool Book::isEmpty(){
+	return waiting.empty();
 }

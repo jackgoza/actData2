@@ -10,17 +10,18 @@
 #include "pQueue.hpp"
 #include <vector>
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
-/*
-pQueue();
-void addEmployee(employee temp);
-bool removeEmployee(string nameOf);
-void setQueueOrder();
-*/
+pQueue::pQueue(){}
 
-void pQueue::addEmployee(employee temp){
+const pQueue& pQueue::operator=(const pQueue& rhs){
+	WorkQueue = rhs.WorkQueue;
+	return *this;
+}
+
+void pQueue::addEmployee(Employee temp){
 	WorkQueue.push_back(temp);
 }
 
@@ -38,6 +39,22 @@ bool pQueue::removeEmployee(string nameOf){
 void pQueue::setQueueOrder(){
 	for (int i=0; i<WorkQueue.size(); i++){
 		WorkQueue[i].refreshPriority();
+		cout << WorkQueue[i].getName() << " " << WorkQueue[i].getPriority() << endl;
 	}
 	stable_sort(WorkQueue.begin(), WorkQueue.end()); // This *should* work.
+}
+
+Employee pQueue::pop(){
+	setQueueOrder(); // prioritize
+	Employee next = WorkQueue.back(); // save highest priority
+	WorkQueue.pop_back(); // delete from queue
+	return next;
+}
+
+bool pQueue::empty(){
+	return (WorkQueue.size() < 1);
+}
+
+Employee pQueue::top(){
+	return WorkQueue.back();
 }

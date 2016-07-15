@@ -16,16 +16,17 @@
 using namespace std;
 
 class pQueue{
+private:
+	vector<Employee> WorkQueue;
 public:
 	pQueue();
-	void addEmployee(employee temp);
-	bool removeEmployee(string nameOf);
+	const pQueue& operator = (const pQueue& rhs);
+	void addEmployee(Employee temp);
+	bool removeEmployee(string nameOf); // 
 	void setQueueOrder(); // this NEEDS to be reimagined.
-	
-private:
-	vector<employee> WorkQueue;
-	// Yeah, we're using a vector. Trip. Dare you.
-	
+	Employee pop();
+	Employee top();
+	bool empty();
 };
 
 #endif /* pQueue_hpp */

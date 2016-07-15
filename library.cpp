@@ -3,31 +3,49 @@
 
 #include "library.hpp"
 
-
-/*
-	library();
-	add_book(string newBook);
-	add_employee(string newPerson);
-	circulate_book(string bookToMove, Date dayOfMove);
-	pass_on(string bookToMove);
- */
-
 Library::Library(){
 }
 
 void Library::add_book(string newBook){
-	book tempBook(newBook);
-	bookList.push_back(tempBook);
+	Book tempBook(newBook);
+	toBeCirculated.push_back(tempBook);
 }
 
 void Library::add_employee(string newPerson){
-	employee tempPerson(newPerson);
-	employeeList.push_back(tempPerson);
+	Employee tempPerson(newPerson);
+	employeeList.push_front(tempPerson);
 }
 
 void Library::circulate_book(string bookToMove, Date dayOfMove){
-	
+	list<Book>::iterator it;
+	for (it = toBeCirculated.begin(); it != toBeCirculated.end(); it++){ // find book
+		if (it->getname() == bookToMove){
+			it->populate_queue(employeeList); // create queue
+			it->setstartDate(dayOfMove); // save start date
+			break;
+		}
+	}	
 }
 
 void Library::pass_on(string bookToMove, Date date){
+	Employee next, prev;
+	list<Book>::iterator it;
+	for (it = toBeCirculated.begin(); it != toBeCirculated.end(); it++){ // find book
+		if (it->getname() == bookToMove){
+			prev = it->pop_next(); // pop highest priority, save to prev
+			prev.setWait(date - it->getstartDate()); // wait = current date - book start date
+			prev.setRetain(date - prev.getStart()); // retain = current date - employee start
+			if (!it->isEmpty()){
+				next = it->top(); // next is top of queue
+				next.setStart(date); // save current date for next employee
+			}
+			else{
+				it->setarchived(true);
+				archived.push_back(*it); // add to archived
+				toBeCirculated.erase(it); // erase from toBeCirculated
+				
+			}
+			break;
+		}
+	}
 }

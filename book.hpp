@@ -7,24 +7,25 @@
 
 #include <stdio.h>
 #include <string>
-#include "pQueue.hpp" // ditch this
+#include "pQueue.hpp"
+#include <list>
 #include "Date.h"
 #include "employee.hpp"
 
 using namespace std;
 
-class book{
+class Book{
 private:
 	string name;
 	Date startDate;
 	Date endDate;
 	bool archived;
-	pQueue waiting; // this needs to be changed to the pqueue
+	pQueue waiting;
 public:
-	book();
-	book(string bookName);
-	book(string bookName, Date start);
-	book(book& other);
+	Book();
+	Book(string bookName);
+	Book(string bookName, Date start);
+	Book(const Book& other);
 
 	string getname();
 	Date getstartDate();
@@ -35,7 +36,11 @@ public:
 	void setstartDate(Date newDate);
 	void setendDate(Date newDate);
 	void setarchived(bool newBool);
-	
+
+	void populate_queue(list<Employee> empList);
+	Employee pop_next();
+	Employee top();
+	bool isEmpty();
 };
 
 #endif /* book_hpp */
