@@ -21,6 +21,8 @@ private:
 	list<Book> toBeCirculated;
 	list<Book> archived;
 	list<Employee> employeeList;
+	list <Book> tmepBook;
+
 public:
 	Library();
 

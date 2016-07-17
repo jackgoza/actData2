@@ -1,0 +1,9 @@
+﻿  pQueue.cpp
+c:\users\willi\source\repos\actdata2\pqueue.cpp(30): warning C4018: '<': signed/unsigned mismatch
+c:\users\willi\source\repos\actdata2\pqueue.cpp(40): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  library.cpp
+  employee.cpp
+  book.cpp
+  Generating Code...
+  project2 solution.vcxproj -> C:\Users\willi\Source\Repos\actData2\project2 solution\Debug\project2 solution.exe
