@@ -21,6 +21,7 @@ private:
 	list<Book> toBeCirculated;
 	list<Book> archived;
 	list<Employee*> employeeList; // list of pointers to employees
+
 public:
 	Library();
 	~Library();
