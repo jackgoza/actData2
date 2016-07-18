@@ -20,8 +20,6 @@ private:
 	string name;
 	int waitTime;
 	int retainTime;
-	int priority;
-	Date start; // store start to record retain time
 public:
 	Employee();
 	Employee(string newName);
@@ -36,9 +34,7 @@ public:
 	int getWait();
 	int getRetain();
 	Date getStart();
-	int getPriority();
 
-	void refreshPriority(); // hate the fact that this is O(n).
 	friend bool operator<(const Employee& lhs, const Employee& rhs);
 	friend bool operator>(const Employee& lhs, const Employee& rhs); // might be unnecessary
 };

@@ -55,18 +55,18 @@ void Book::setarchived(bool newBool){
 	archived = newBool;
 }
 
-void Book::populate_queue(const list<Employee> empList){
-	list<Employee>::const_iterator it;
+void Book::populate_queue(const list<Employee*> empList ){
+	list<Employee*>::const_iterator it;
 	for (it = empList.begin(); it != empList.end(); it++){ // add all current employees to queue
 		waiting.addEmployee(*it);
 	}
 }
 
-Employee Book::pop_next(){
-	return waiting.pop();
+Employee* Book::pop_max(){
+	return waiting.pop_max();
 }
 
-Employee Book::top(){
+Employee* Book::top(){
 	return waiting.top();
 }
 

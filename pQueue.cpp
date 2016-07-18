@@ -8,27 +8,19 @@
 */
 
 #include "pQueue.hpp"
-#include <vector>
-#include <algorithm>
-#include <iostream>
 
 using namespace std;
 
 pQueue::pQueue(){}
 
-const pQueue& pQueue::operator=(const pQueue& rhs){
-	WorkQueue = rhs.WorkQueue;
-	return *this;
-}
-
-void pQueue::addEmployee(Employee temp){
+void pQueue::addEmployee(Employee* temp){
 	WorkQueue.push_back(temp);
 }
 
 bool pQueue::removeEmployee(string nameOf){
 
 	for (int i=0; i<WorkQueue.size(); i++){
-		if (WorkQueue[i].getName()==nameOf){
+		if (WorkQueue[i]->getName() == nameOf){
 			WorkQueue.erase(WorkQueue.begin()+i);
 			return true;
 		}
@@ -36,25 +28,33 @@ bool pQueue::removeEmployee(string nameOf){
 	return false;
 }
 
-void pQueue::setQueueOrder(){
-	for (int i=0; i<WorkQueue.size(); i++){
-		WorkQueue[i].refreshPriority();
-		cout << WorkQueue[i].getName() << " " << WorkQueue[i].getPriority() << endl;
+Employee* pQueue::pop_max(){ // pulls highest priority from queue : O(n)
+	Employee *max = *WorkQueue.begin(); // assume max is first element
+	vector<Employee*>::iterator it, toErase;
+	it = toErase = WorkQueue.begin(); 
+	it++; // start at second element so we don't compare max to itself
+	for (it; it != WorkQueue.end(); it++){
+		if ((max->getWait() - max->getRetain()) < ((*it)->getWait() - (*it)->getRetain())){ // if new max is found, update pointers
+			max = *it;
+			toErase = it;
+		}
 	}
-	stable_sort(WorkQueue.begin(), WorkQueue.end()); // This *should* work.
+	WorkQueue.erase(toErase);
+	return max;
 }
 
-Employee pQueue::pop(){
-	setQueueOrder(); // prioritize
-	Employee next = WorkQueue.back(); // save highest priority
-	WorkQueue.pop_back(); // delete from queue
-	return next;
+Employee* pQueue::top(){ // O(n)
+	Employee *max = *WorkQueue.begin(); // assume max is first element
+	vector<Employee*>::iterator it = WorkQueue.begin();
+	it++; // start at second element so we don't compare max to itself
+	for (it; it != WorkQueue.end(); it++){
+		if ((max->getWait() - max->getRetain()) < ((*it)->getWait() - (*it)->getRetain())){ // if new max is found, update pointers
+			max = *it;
+		}
+	}
+	return max;
 }
 
 bool pQueue::empty(){
 	return (WorkQueue.size() < 1);
-}
-
-Employee pQueue::top(){
-	return WorkQueue.back();
 }

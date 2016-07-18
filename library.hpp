@@ -20,9 +20,10 @@ class Library{
 private:
 	list<Book> toBeCirculated;
 	list<Book> archived;
-	list<Employee> employeeList;
+	list<Employee*> employeeList; // list of pointers to employees
 public:
 	Library();
+	~Library();
 
 	void add_book(string newBook);
 	void add_employee(string newPerson);

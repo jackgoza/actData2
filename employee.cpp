@@ -10,22 +10,18 @@ Employee::Employee(){
 	name = "unknown";
 	waitTime = 0;
 	retainTime = 0;
-	priority = 0;
 }
 
 Employee::Employee(string newName){
 	name = newName;
 	waitTime = 0;
 	retainTime = 0;
-	priority = 0;
 }
 
 const Employee& Employee::operator = (const Employee& rhs){
 	name = rhs.name;
 	waitTime = rhs.waitTime;
 	retainTime = rhs.retainTime;
-	priority = rhs.priority;
-	start = rhs.start;
 	return *this;
 }
 
@@ -42,15 +38,6 @@ void Employee::setRetain(int retain){
 	retainTime = retain;
 }
 
-void Employee::setStart(Date date){
-	start = date;
-}
-
-void Employee::refreshPriority(){ // hate the fact that this is O(n). I doubt that's fixable though.
-	
-	priority = waitTime - retainTime;
-}
-
 string Employee::getName(){
 	return name;
 }
@@ -63,18 +50,10 @@ int Employee::getRetain(){
 	return retainTime;
 }
 
-Date Employee::getStart(){
-	return start;
-}
-
-int Employee::getPriority(){
-	return priority;
-}
-
 bool operator<(const Employee& lhs, const Employee& rhs){
-	return (lhs.priority < rhs.priority);
+	return ((lhs.waitTime - lhs.retainTime) < (rhs.waitTime - rhs.retainTime));
 }
 
 bool operator>(const Employee& lhs, const Employee& rhs){
-	return (lhs.priority > rhs.priority);
+	return ((lhs.waitTime - lhs.retainTime) > (rhs.waitTime - rhs.retainTime));
 }

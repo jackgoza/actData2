@@ -37,9 +37,9 @@ public:
 	void setendDate(Date newDate);
 	void setarchived(bool newBool);
 
-	void populate_queue(list<Employee> empList);
-	Employee pop_next();
-	Employee top();
+	void populate_queue(list<Employee*> empList);
+	Employee* pop_max();
+	Employee* top();
 	bool isEmpty();
 };
 
