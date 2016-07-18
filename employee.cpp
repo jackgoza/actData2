@@ -1,8 +1,6 @@
 //
 //  employee.cpp
 //  data2
-//
-//
 
 #include "employee.hpp"
 
@@ -28,7 +26,6 @@ const Employee& Employee::operator = (const Employee& rhs){
 void Employee::setName(string newName){
 	name = newName;
 }
-
 
 void Employee::setWait(int wait){
 	waitTime = wait;

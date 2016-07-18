@@ -32,4 +32,4 @@ public:
 	void pass_on(string bookToMove, Date date);
 };
 
-#endif /* library_hpp */
+#endif

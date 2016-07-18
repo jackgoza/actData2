@@ -28,15 +28,13 @@ public:
 	void setName(string newName);
 	void setWait(int wait);
 	void setRetain(int retain);
-	void setStart(Date date);
 
 	string getName();
 	int getWait();
 	int getRetain();
-	Date getStart();
 
 	friend bool operator<(const Employee& lhs, const Employee& rhs);
-	friend bool operator>(const Employee& lhs, const Employee& rhs); // might be unnecessary
+	friend bool operator>(const Employee& lhs, const Employee& rhs);
 };
 
-#endif /* employee_hpp */
+#endif

@@ -32,12 +32,15 @@ Book::Book(const Book& other){
 string Book::getname(){
 	return name;
 }
+
 Date Book:: getstartDate(){
 	return startDate;
 }
+
 Date Book::getendDate(){
 	return endDate;
 }
+
 bool Book::getarchived(){
 	return archived;
 }
@@ -45,12 +48,15 @@ bool Book::getarchived(){
 void Book::setname(string newName){
 	name = newName;
 }
+
 void Book::setstartDate(Date newDate){
 	startDate = newDate;
 }
+
 void Book::setendDate(Date newDate){
 	endDate = newDate;
 }
+
 void Book::setarchived(bool newBool){
 	archived = newBool;
 }

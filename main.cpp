@@ -2,7 +2,7 @@
 Name:	Jack Goza, Joshua Ford, Scott Peery
 Course:	CS303
 Program:	Project 2
-Due Date:
+Due Date: 17 July 2016
 
 Description: using queues, design a sytem that allows the circulation of books to employees
 
@@ -47,14 +47,11 @@ extra credit for using GitHub
 
 */
 
-
 #include <iostream>
 #include <queue>
 #include <list>
 #include "book.hpp"
 #include "library.hpp"
-
-
 
 void main(){
 	Library library;

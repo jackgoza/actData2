@@ -1,31 +1,16 @@
 /* 
  
-	SUPER IMPORTANT NOTE:
-		There is no sorting until we need it. Sorting costs money. Using 
-		stable_sort guarantees O(nlog^2(n)), which is fairly freaking good.
-		And it saves us a ton of head scratching.
+	Joshua Ford, John Goza, Scott Peery
+	Project 2b
  
 */
 
 #include "pQueue.hpp"
 
-using namespace std;
-
 pQueue::pQueue(){}
 
 void pQueue::addEmployee(Employee* temp){
 	WorkQueue.push_back(temp);
-}
-
-bool pQueue::removeEmployee(string nameOf){
-
-	for (int i=0; i<WorkQueue.size(); i++){
-		if (WorkQueue[i]->getName() == nameOf){
-			WorkQueue.erase(WorkQueue.begin()+i);
-			return true;
-		}
-	}
-	return false;
 }
 
 Employee* pQueue::pop_max(){ // pulls highest priority from queue : O(n)

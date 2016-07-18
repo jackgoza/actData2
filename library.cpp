@@ -1,3 +1,6 @@
+// Joshua Ford, John Goza, Scott Peery
+// Project 2B
+
 #include "library.hpp"
 
 Library::Library(){

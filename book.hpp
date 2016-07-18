@@ -1,7 +1,3 @@
-//
-// Why have we included a copy constructor? Are we hedging for duplicate books?
-//
-
 #ifndef book_hpp
 #define book_hpp
 

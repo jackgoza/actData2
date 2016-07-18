@@ -20,12 +20,10 @@ using namespace std;
 
 class pQueue{
 private:
-	bool compare(Employee a, Employee b){ return (a.getWait() - a.getRetain()) < (b.getWait() - b.getRetain()); }
 	vector<Employee*> WorkQueue;
 public:
 	pQueue();
 	void addEmployee(Employee* temp);
-	bool removeEmployee(string nameOf);
 	Employee* pop_max();
 	Employee* top();
 	bool empty();
