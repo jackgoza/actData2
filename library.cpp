@@ -30,10 +30,10 @@ void Library::circulate_book(string bookToMove, Date dayOfMove){
 		if (it->getname() == bookToMove){ // this is the book
 			it->populate_queue(employeeList); // create queue
 			it->setstartDate(dayOfMove); // save start date
-			Employee *next = it->top();
 			break;
 		}
 	}
+	cerr << "Book not found" << endl;
 }
 
 void Library::pass_on(string bookToMove, Date date){
@@ -42,13 +42,13 @@ void Library::pass_on(string bookToMove, Date date){
 	for (it = toBeCirculated.begin(); it != toBeCirculated.end(); it++){ // find book : O(n)
 		if (it->getname() == bookToMove){
 			prev = it->pop_max(); // pop max, save to prev
+			prev->retain(date - it->getHeld()); // retain = current date - last pass of book
 			if (!it->isEmpty()){
 				next = it->top(); // next is now max
-				next->setWait(date - it->getstartDate()); // wait = current date - book start date
-				prev->setRetain(next->getWait() - prev->getWait()); // retain = the wait of next employee - wait of this employee
+				next->wait(date - it->getstartDate()); // wait = current date - book start date
+				it->setHeld(date); // save pass date for next employee
 			}
 			else{ // circulation complete
-				prev->setRetain((date - it->getstartDate()) - prev->getWait()); // if last employee, retain is difference of start and end date - wait
 				it->setarchived(true);
 				it->setendDate(date);
 				archived.push_back(*it); // archive
@@ -57,4 +57,5 @@ void Library::pass_on(string bookToMove, Date date){
 			break;
 		}
 	}
+	cerr << "Book not found" << endl;
 }

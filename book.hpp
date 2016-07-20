@@ -17,6 +17,7 @@ private:
 	Date endDate;
 	bool archived;
 	pQueue waiting;
+	Date lastHeld;
 public:
 	Book();
 	Book(string bookName);
@@ -27,11 +28,13 @@ public:
 	Date getstartDate();
 	Date getendDate();
 	bool getarchived();
+	Date getHeld();
 
 	void setname(string newName);
 	void setstartDate(Date newDate);
 	void setendDate(Date newDate);
 	void setarchived(bool newBool);
+	void setHeld(Date date);
 
 	void populate_queue(list<Employee*> empList);
 	Employee* pop_max();

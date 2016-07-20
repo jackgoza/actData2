@@ -27,12 +27,12 @@ void Employee::setName(string newName){
 	name = newName;
 }
 
-void Employee::setWait(int wait){
-	waitTime = wait;
+void Employee::wait(int wait){
+	waitTime += wait;
 }
 
-void Employee::setRetain(int retain){
-	retainTime = retain;
+void Employee::retain(int retain){
+	retainTime += retain;
 }
 
 string Employee::getName(){

@@ -33,7 +33,7 @@ Employee* pQueue::top(){ // O(n)
 	vector<Employee*>::iterator it = WorkQueue.begin();
 	it++; // start at second element so we don't compare max to itself
 	for (it; it != WorkQueue.end(); it++){
-		if ((max->getWait() - max->getRetain()) < ((*it)->getWait() - (*it)->getRetain())){ // if new max is found, update pointers
+		if ((max->getWait() - max->getRetain()) < ((*it)->getWait() - (*it)->getRetain())){ // if new max is found, update pointer
 			max = *it;
 		}
 	}
@@ -41,5 +41,5 @@ Employee* pQueue::top(){ // O(n)
 }
 
 bool pQueue::empty(){
-	return (WorkQueue.size() < 1);
+	return WorkQueue.size() < 1;
 }

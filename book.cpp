@@ -45,12 +45,16 @@ bool Book::getarchived(){
 	return archived;
 }
 
+Date Book::getHeld(){
+	return lastHeld;
+}
+
 void Book::setname(string newName){
 	name = newName;
 }
 
-void Book::setstartDate(Date newDate){
-	startDate = newDate;
+void Book::setstartDate(Date newDate){ // start date is also lastHeld for first pass_on()
+	startDate = lastHeld = newDate;
 }
 
 void Book::setendDate(Date newDate){
@@ -59,6 +63,10 @@ void Book::setendDate(Date newDate){
 
 void Book::setarchived(bool newBool){
 	archived = newBool;
+}
+
+void Book::setHeld(Date date){
+	lastHeld = date;
 }
 
 void Book::populate_queue(const list<Employee*> empList ){

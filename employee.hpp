@@ -26,15 +26,15 @@ public:
 	const Employee& operator = (const Employee& rhs);
 
 	void setName(string newName);
-	void setWait(int wait);
-	void setRetain(int retain);
+	void wait(int wait);
+	void retain(int retain);
 
 	string getName();
 	int getWait();
 	int getRetain();
 
 	friend bool operator<(const Employee& lhs, const Employee& rhs);
-	friend bool operator>(const Employee& lhs, const Employee& rhs);
+	friend bool operator>(const Employee& lhs, const Employee& rhs); // might be unnecessary
 };
 
-#endif
+#endif /* employee_hpp */
